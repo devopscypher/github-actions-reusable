@@ -1,0 +1,25 @@
+name: 080-reusable-workflow-caller
+
+on:
+ push:
+   branchs: none # [ main ]
+ pull_request:
+   branchs: none # [ main ]
+
+ # Allows you to run this workflow manually from the Actions tab
+ workflow_dispatch:
+
+jobs:
+   call-workflow-A:
+     #uses: 
+     with:
+       username: USERNAME
+    secrets:
+      token: ${{ secrets.TOKEN }}
+
+call-workflow-B:
+  #uses: 
+  with:
+    username: USERNAME
+  secrets:
+    token: ${{ secrets.TOKEN }}   

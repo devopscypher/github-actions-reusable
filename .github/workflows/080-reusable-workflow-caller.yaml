@@ -11,15 +11,15 @@ on:
 
 jobs:
    call-workflow-A:
-     #uses: 
+     uses: devopscypher/github-actions-reusable/.github/workflows/080-reusable-workflow-caller.yaml
      with:
        username: USERNAME
-    secrets:
+     secrets:
       token: ${{ secrets.TOKEN }}
 
-call-workflow-B:
-  #uses: 
-  with:
-    username: USERNAME
-  secrets:
-    token: ${{ secrets.TOKEN }}   
+   call-workflow-B:
+     uses: devopscypher/github-actions-reusable/.github/workflows/080-reusable-workflow-caller.yaml 
+     with:
+       username: USERNAME
+     secrets:
+      token: ${{ secrets.TOKEN }}   
